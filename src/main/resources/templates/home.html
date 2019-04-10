@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Sweater</title>
+    <title>Home</title>
     <link rel="stylesheet" href="/static/style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Bootstrap CSS -->
@@ -12,8 +12,8 @@
 
 <nav class="navbar">
     <a class="a_navbar" href="/home">ГОЛОВНА</a><p>|</p><a class="a_navbar" href="/committee1">ПРИЙМАЛЬНА КОМІСІЯ</a><p>|</p>
-    <a class="a_navbar" href="">КВЕСТ</a><p>|</p><a class="a_navbar" href="/contacts">КОНТАКТИ</a>
-    <p>|</p><a class="a_navbar" href="">FAQ</a><p>|</p>
+    <a class="a_navbar" href="/quest">КВЕСТ</a><p>|</p><a class="a_navbar" href="/contacts">КОНТАКТИ</a>
+    <p>|</p><a class="a_navbar" href="">FAQ</a><p>|</p><a class="a_navbar" href="/news">НОВИНИ</a>
 
     <form action="/logout" method="post">
         <input type="hidden" name="_csrf" value="${_csrf.token}" />
@@ -23,15 +23,14 @@
 </nav>
 
 <div>
-    <img  class="home_img"  src="/static/homeImg.jpg">
+    <img class="home_img"  src="/static/homeImg.jpg">
 </div>
-</p>
 <div class="div_home_top3">
-    <p style="position: absolute; margin-top: 8px; color: white;width: 40%; width: 100%; font-size: 30px;title-shadow: 0.8px 0.8px #694040; ">Ласкаво просимо на наш сайт!
+    <p style="position: absolute; margin-top: 8px; color: white;width: 40%;font-size: 30px;text-shadow: 0.8px 0.8px #694040; ">Ласкаво просимо на наш сайт!
     <p style="margin-top: 45px;">Тут Ви зможете знайти багато інформації стосовно ВНЗ, приймальної комісії, а також ознайомитись із захоплюючим квестом, завдяки якому Ви зможете ближче ознайомитись з нашим навчальним закладом.</p>
 </div>
 <div class="pImg">
-    <p style="width: 50%; margin-left: 20%; padding-top: 10px;">У цьому розділі Ви зможете отримати більш детальну інформацію про навігацію та підрозділи сайту</p>
+    <p style="width: 50%; margin-left: 25%; padding-top: 10px;">У цьому розділі Ви зможете отримати більш детальну інформацію про навігацію та підрозділи сайту</p>
 </div>
 
 <div>
@@ -55,7 +54,26 @@
 
 
 <footer>
-    <p style="padding-top: 10px;     margin-bottom: 0px;">© Лятанская Валерия</p>
+
+    <div style="padding-top: 10px;margin-bottom: 0; text-align: center;">
+        <table style="width: 100%">
+            <tr>
+                <th>Title</th>
+                <th>Body</th>
+                <th>Image</th>
+            </tr>
+
+
+            <tr th:each="footer : ${footers}">
+                <td th:text="${footer.title_footer}"></td>
+                <td th:text="${footer.body_footer}"></td>
+                <td th:each="image1 : ${images1}">
+                    <img th:attr="src=${image1.path},title=${image1.path},alt=${image1.path}"
+                              height="30" width="30"/>
+                </td>
+            </tr>
+        </table>
+    </div>
 </footer>
 </body>
 </html>

@@ -90,16 +90,16 @@ body {
     padding: 25px;
     text-align: center;
     font-style: italic;
-    margin-bottom: 0px;
+    margin-bottom: 0;
     text-shadow: 0.5px 0.5px 0.5px black, 0 0 0.1em #1D7F13;
 }
 
 .div_home_top2{
     background: linear-gradient(290deg, #fff491, #fffde7c7);
     border: 0.2px outset #ffa218b8;
-    width: 40%;
+    width: 70%;
     height: 75px;
-    margin-left: 30%;
+    margin-left: 15%;
     margin-top: 20px;
 }
 
@@ -125,11 +125,10 @@ body {
 
 footer{
     background-color: #faaeae;
-    height: 40px;
     text-align: center;
     margin-top: 30px;
-    margin-bottom: 0px;
-    padding-bottom: 0px;
+    margin-bottom: 0;
+    padding-bottom: 0;
 }
 
 .login1{

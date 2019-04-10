@@ -4,8 +4,8 @@ import javax.persistence.*;
 
 
 @Entity
-@Table(name = "committee")
-public class Message {
+@Table(name = "committee", schema = "public", catalog = "")
+public class Committee {
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
     private Integer id;
@@ -15,10 +15,10 @@ public class Message {
     @Column(name = "body")
     private String body;
 
-    public Message() {
+    public Committee() {
     }
 
-    public Message(String title, String body) {
+    public Committee(String title, String body) {
         this.title = title;
         this.body = body;
     }
