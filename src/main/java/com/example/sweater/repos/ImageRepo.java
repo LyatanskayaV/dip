@@ -9,6 +9,11 @@ public interface ImageRepo extends CrudRepository<ImageC, Long> {
     Iterable<ImageC> findAll();
 
 /*
+    Iterable<ImageC> findById(int id);
+*/
+
+
+/*
     Iterable<ImageC> findById(int id_image);
 */
 

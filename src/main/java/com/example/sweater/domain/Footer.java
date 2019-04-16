@@ -3,7 +3,7 @@ package com.example.sweater.domain;
 import javax.persistence.*;
 
 @Entity
-    @Table(name = "footer", schema = "public", catalog = "")
+    @Table(name = "footer", schema = "public")
     public class Footer {
         @Id
         @GeneratedValue(strategy= GenerationType.AUTO)
@@ -14,13 +14,13 @@ import javax.persistence.*;
         @Column(name = "body_footer")
         private String body_footer;
         @Column(name = "img")
-        private Integer img;
+        private String img;
 
-    public Integer getImg() {
+    public String getImg() {
         return img;
     }
 
-    public void setImg(Integer img) {
+    public void setImg(String img) {
         this.img = img;
     }
         /*        @OnetoMany(targetEntity = Image1.class)

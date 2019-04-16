@@ -1,7 +1,8 @@
 <#macro page>
 <!DOCTYPE html>
-<html lang="en">
-<head>
+    <html xmlns:th="http://www.thymeleaf.org" lang="en">
+
+    <head>
     <meta charset="UTF-8">
     <title>My diploma</title>
     <link rel="stylesheet" href="/static/style.css">

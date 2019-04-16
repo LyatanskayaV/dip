@@ -9,7 +9,7 @@ body {
     min-height: 100%;
 }
 .navbar{
-    background-color: #FFB93F;
+    background-color: #fdc055e0;
     height: 40px;
     text-align: center;
     color: white; /* вертикальные линии*/
@@ -49,10 +49,10 @@ body {
     margin-top: -1px;
 }
 .div_home_top3{
-    background: rgba(95, 167, 145, 0.6); /* Цвет фона */
+    background: rgba(81, 155, 132, 0.88); /* Цвет фона */
     border: 3px;
     border-color: #707070;
-    width: 55%;
+    width: 60%;
     height: 120px;
     border-radius: 15px;
     margin-left: 20%;
@@ -73,13 +73,13 @@ body {
 }
 
 .pImg{
-    background: rgba(34, 36, 35, 0.8); /* Цвет фона */
+    background: rgba(34, 36, 35, 0.91); /* Цвет фона */
     border: 3px;
     border-color: #707070;
     width: 100%;
     height: 60px;
     position: absolute;
-    margin-top: -78px;
+    margin-top: -60px;
     color: #FDFDFD;
     text-shadow: #707070 1px;
     text-align: center;
@@ -95,8 +95,8 @@ body {
 }
 
 .div_home_top2{
-    background: linear-gradient(290deg, #fff491, #fffde7c7);
-    border: 0.2px outset #ffa218b8;
+    /*background: linear-gradient(290deg, #fff491, #fffde7c7);
+    border: 0.2px outset #ffa218b8;*/
     width: 70%;
     height: 75px;
     margin-left: 15%;
@@ -124,7 +124,7 @@ body {
 }
 
 footer{
-    background-color: #faaeae;
+    background-color: #fae5ae4d;
     text-align: center;
     margin-top: 30px;
     margin-bottom: 0;
@@ -138,9 +138,8 @@ footer{
 }
 
 .login_content{
-    width: 50%;
-    margin-left: 30%;
-    padding-top: 20%;
+    width: 100%;
+    margin-left: 10%;
+    padding-top: 5%;
     position: relative;
-
 }

@@ -13,10 +13,10 @@ public interface FooterRepo extends CrudRepository<Footer, Long> {
 
     Iterable<Footer> findById(int id);
 
-    @Query("SELECT id, title_footer, img\n" +
+  /*  @Query("SELECT id, title_footer, img\n" +
                 "FROM Footer ")
     Collection<Footer> findAll1();
-
+*/
    // Iterable<Committee> deleteByTitle(String title);
 
 }

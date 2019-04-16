@@ -2,7 +2,6 @@ package com.example.sweater.controller;
 
 import com.example.sweater.domain.*;
 import com.example.sweater.repos.*;
-import org.hibernate.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -23,13 +22,38 @@ public class MainController {
     private NewsRepo newsRepo;
     @Autowired
     private QuestRepo questRepo;
-
+    @Autowired
+    private FeedbackRepo feedbackRepo;
+    @Autowired
+    UserRepo userRepo;
+    @Autowired
+    FaqRepo faqRepo;
 
 
     @GetMapping("/")
-    public String home(String mess, Model model) {
+    public String home(Model model) {
         List<Footer> footers =  (List<Footer>) footerRepo.findAll();
         model.addAttribute("footers",  footers);
+
+        List<Footer> footers1 =  (List<Footer>) footerRepo.findById(1);
+        String img1 = footers1.iterator().next().getImg();
+        model.addAttribute("img1",  img1);
+
+        List<Footer> footers2 =  (List<Footer>) footerRepo.findById(2);
+        String img2 = footers2.iterator().next().getImg();
+        model.addAttribute("img2",  img2);
+
+        List<Footer> footers3 =  (List<Footer>) footerRepo.findById(3);
+        String img3 = footers3.iterator().next().getImg();
+        model.addAttribute("img3",  img3);
+
+        List<Footer> footers4 =  (List<Footer>) footerRepo.findById(4);
+        String img4 = footers4.iterator().next().getImg();
+        model.addAttribute("img4",  img4);
+
+        List<Footer> footers5 =  (List<Footer>) footerRepo.findById(5);
+        String img5 = footers5.iterator().next().getImg();
+        model.addAttribute("img5",  img5);
         return "home.html";
     }
 
@@ -62,6 +86,26 @@ public class MainController {
 
         List<Footer> footers =  (List<Footer>) footerRepo.findAll();
         model.addAttribute("footers",  footers);
+
+        List<Footer> footers1 =  (List<Footer>) footerRepo.findById(1);
+        String img1 = footers1.iterator().next().getImg();
+        model.addAttribute("img1",  img1);
+
+        List<Footer> footers2 =  (List<Footer>) footerRepo.findById(2);
+        String img2 = footers2.iterator().next().getImg();
+        model.addAttribute("img2",  img2);
+
+        List<Footer> footers3 =  (List<Footer>) footerRepo.findById(3);
+        String img3 = footers3.iterator().next().getImg();
+        model.addAttribute("img3",  img3);
+
+        List<Footer> footers4 =  (List<Footer>) footerRepo.findById(4);
+        String img4 = footers4.iterator().next().getImg();
+        model.addAttribute("img4",  img4);
+
+        List<Footer> footers5 =  (List<Footer>) footerRepo.findById(5);
+        String img5 = footers5.iterator().next().getImg();
+        model.addAttribute("img5",  img5);
         return "committee1.html";
     }
 
@@ -74,6 +118,26 @@ public class MainController {
         List<ImageC> images1 = (List<ImageC>) imageRepo.findAll();
         model.addAttribute("footers",  footers);
         model.addAttribute("images1", images1);
+
+        List<Footer> footers1 =  (List<Footer>) footerRepo.findById(1);
+        String img1 = footers1.iterator().next().getImg();
+        model.addAttribute("img1",  img1);
+
+        List<Footer> footers2 =  (List<Footer>) footerRepo.findById(2);
+        String img2 = footers2.iterator().next().getImg();
+        model.addAttribute("img2",  img2);
+
+        List<Footer> footers3 =  (List<Footer>) footerRepo.findById(3);
+        String img3 = footers3.iterator().next().getImg();
+        model.addAttribute("img3",  img3);
+
+        List<Footer> footers4 =  (List<Footer>) footerRepo.findById(4);
+        String img4 = footers4.iterator().next().getImg();
+        model.addAttribute("img4",  img4);
+
+        List<Footer> footers5 =  (List<Footer>) footerRepo.findById(5);
+        String img5 = footers5.iterator().next().getImg();
+        model.addAttribute("img5",  img5);
         return "home.html";
     }
 
@@ -86,6 +150,26 @@ public class MainController {
 
         List<Footer> footers =  (List<Footer>) footerRepo.findAll();
         model.addAttribute("footers",  footers);
+
+        List<Footer> footers1 =  (List<Footer>) footerRepo.findById(1);
+        String img1 = footers1.iterator().next().getImg();
+        model.addAttribute("img1",  img1);
+
+        List<Footer> footers2 =  (List<Footer>) footerRepo.findById(2);
+        String img2 = footers2.iterator().next().getImg();
+        model.addAttribute("img2",  img2);
+
+        List<Footer> footers3 =  (List<Footer>) footerRepo.findById(3);
+        String img3 = footers3.iterator().next().getImg();
+        model.addAttribute("img3",  img3);
+
+        List<Footer> footers4 =  (List<Footer>) footerRepo.findById(4);
+        String img4 = footers4.iterator().next().getImg();
+        model.addAttribute("img4",  img4);
+
+        List<Footer> footers5 =  (List<Footer>) footerRepo.findById(5);
+        String img5 = footers5.iterator().next().getImg();
+        model.addAttribute("img5",  img5);
         return "news.html";
     }
 
@@ -95,6 +179,28 @@ public class MainController {
 
         List<Footer> footers =  (List<Footer>) footerRepo.findAll();
         model.addAttribute("footers",  footers);
+
+        List<Footer> footers1 =  (List<Footer>) footerRepo.findById(1);
+        String img1 = footers1.iterator().next().getImg();
+        model.addAttribute("img1",  img1);
+
+        List<Footer> footers2 =  (List<Footer>) footerRepo.findById(2);
+        String img2 = footers2.iterator().next().getImg();
+        model.addAttribute("img2",  img2);
+
+        List<Footer> footers3 =  (List<Footer>) footerRepo.findById(3);
+        String img3 = footers3.iterator().next().getImg();
+        model.addAttribute("img3",  img3);
+
+        List<Footer> footers4 =  (List<Footer>) footerRepo.findById(4);
+        String img4 = footers4.iterator().next().getImg();
+        model.addAttribute("img4",  img4);
+
+        List<Footer> footers5 =  (List<Footer>) footerRepo.findById(5);
+        String img5 = footers5.iterator().next().getImg();
+        model.addAttribute("img5",  img5);
+
+
         return "contacts.html";
     }
 
@@ -108,9 +214,65 @@ public class MainController {
         List<Quest> quests = (List<Quest>) questRepo.findAll();
         model.addAttribute("quests", quests);
 
-        List<ImageC> image1 = (List<ImageC>) imageRepo.findAll();
-        model.addAttribute("image1", image1);
+        List<Feedback> feedbacks = (List<Feedback>) feedbackRepo.findAll();
+        model.addAttribute("feedbacks", feedbacks);
+
+        List<Footer> footers1 =  (List<Footer>) footerRepo.findById(1);
+        String img1 = footers1.iterator().next().getImg();
+        model.addAttribute("img1",  img1);
+
+        List<Footer> footers2 =  (List<Footer>) footerRepo.findById(2);
+        String img2 = footers2.iterator().next().getImg();
+        model.addAttribute("img2",  img2);
+
+        List<Footer> footers3 =  (List<Footer>) footerRepo.findById(3);
+        String img3 = footers3.iterator().next().getImg();
+        model.addAttribute("img3",  img3);
+
+        List<Footer> footers4 =  (List<Footer>) footerRepo.findById(4);
+        String img4 = footers4.iterator().next().getImg();
+        model.addAttribute("img4",  img4);
+
+        List<Footer> footers5 =  (List<Footer>) footerRepo.findById(5);
+        String img5 = footers5.iterator().next().getImg();
+        model.addAttribute("img5",  img5);
+
+
+        /*List<ImageC> images = (List<ImageC>) imageRepo.findAll();
+        model.addAttribute("images", images);*/
 
         return "quest.html";
+    }
+
+
+    @GetMapping("/faq")
+    public String footer_faq(Model model) {
+        List<FAQ> faqs =  (List<FAQ>) faqRepo.findAll();
+        model.addAttribute("faqs",  faqs);
+
+        List<Footer> footers =  (List<Footer>) footerRepo.findAll();
+        model.addAttribute("footers",  footers);
+
+        List<Footer> footers1 =  (List<Footer>) footerRepo.findById(1);
+        String img1 = footers1.iterator().next().getImg();
+        model.addAttribute("img1",  img1);
+
+        List<Footer> footers2 =  (List<Footer>) footerRepo.findById(2);
+        String img2 = footers2.iterator().next().getImg();
+        model.addAttribute("img2",  img2);
+
+        List<Footer> footers3 =  (List<Footer>) footerRepo.findById(3);
+        String img3 = footers3.iterator().next().getImg();
+        model.addAttribute("img3",  img3);
+
+        List<Footer> footers4 =  (List<Footer>) footerRepo.findById(4);
+        String img4 = footers4.iterator().next().getImg();
+        model.addAttribute("img4",  img4);
+
+        List<Footer> footers5 =  (List<Footer>) footerRepo.findById(5);
+        String img5 = footers5.iterator().next().getImg();
+        model.addAttribute("img5",  img5);
+
+        return "faq.html";
     }
 }

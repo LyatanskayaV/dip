@@ -13,7 +13,7 @@
 <nav class="navbar">
     <a class="a_navbar" href="/home">ГОЛОВНА</a><p>|</p><a class="a_navbar" href="/committee1">ПРИЙМАЛЬНА КОМІСІЯ</a><p>|</p>
     <a class="a_navbar" href="/quest">КВЕСТ</a><p>|</p><a class="a_navbar" href="/contacts">КОНТАКТИ</a>
-    <p>|</p><a class="a_navbar" href="">FAQ</a><p>|</p><a class="a_navbar" href="/news">НОВИНИ</a>
+    <p>|</p><a class="a_navbar" href="/faq">FAQ</a><p>|</p><a class="a_navbar" href="/news">НОВИНИ</a>
 
     <form action="/logout" method="post" enctype="application/x-www-form-urlencoded">
         <input type="hidden" name="_csrf" value="${_csrf.token}" />
@@ -31,8 +31,6 @@
 
 </div>
 <div style="width: 70%; margin-left: 15%;">
-
-
     <div style="border: 1px outset #FFC107;
     margin-top: 20px;
     border-radius: 20px" th:each="quest : ${quests}">
@@ -41,27 +39,54 @@
         <p th:text="${quest.body_quest}" style="margin-left: 5%;text-align: center; width: 90%"></p>
         <p th:text="${quest.link_quest}" style="margin-left: 5%;text-align: center; width: 90%"></p>
     </div>
+</div>
 
+<h4 style="width: 100%; text-align: center; margin-top: 20px;">Відгуки</h4>
+
+<div style="width: 70%; margin-left: 15%;">
+    <div  style="border: 1px outset #FFC107;
+    margin-top: 20px;
+    border-radius: 20px" th:each="feedback : ${feedbacks}">
+        <p th:text="${feedback.title_feedback}" style="text-decoration-line: underline;text-align: center;font-weight: bold; width: 100%">
+        </p>
+        <p th:text="${feedback.body_feedback}" style="margin-left: 5%;text-align: center; width: 90%"></p>
+        <div >
+            <p style="margin-left: 5%;text-align: center; width: 90%">Автор відгуку: <span th:text="${feedback.author_feedback}"></span></p>
+        </div>
+        <p style=" margin-left: 5%;text-align: center; width: 90%">Дата розміщення: <span th:text="${feedback.date_feedback}"></span></p>
+
+    </div>
 </div>
 
 
 <footer>
-
     <div style="padding-top: 10px;margin-bottom: 0; text-align: center;">
-        <table style="width: 100%">
-            <tr>
-                <th>Title</th>
-                <th>Body</th>
-                <th>Image</th>
-            </tr>
-
+        <table style="width: 100%;">
             <tr th:each="footer : ${footers}">
-                <td th:text="${footer.title_footer}"></td>
-                <td th:text="${footer.body_footer}"></td>
-                <td th:each="image : ${image1}" th:text="${image1.path}"></td>
+                <th th:text="${footer.title_footer}"></th>
+                <th th:text="${footer.body_footer}"></th>
             </tr>
         </table>
+        <!-- <div style="margin-top: -80px; margin-bottom: 30px">
+             <img src="/logo.png">
+         </div>-->
+        <div style="width: 20%;
+    margin-left: 65%;
+    margin-bottom: 20px;">
+            <span><a href="https://www.facebook.com/onaft"><img style="height: 35px;" th:attr="src=${img1}" height="30"></a>
+        </span>
+            <span><a href="https://www.instagram.com/_onaft_/"><img style="height: 47px;" th:attr="src=${img2}" height="30"></a>
+        </span>
+        </div>
+    </div>
 
+    <div style="width: 100%; height: 70px">
+        <span><a href="https://www.onaft.edu.ua/"><img style="height: 50px;" th:attr="src=${img3}" height="30"></a>
+        </span>
+        <span><a href="https://mon.gov.ua/ua"><img style="height: 50px;" th:attr="src=${img4}" height="30"></a>
+        </span>
+        <span><a href="http://www.kipik.onaft.edu.ua/index.php/ua/"><img style="height: 50px;" th:attr="src=${img5}" height="30"></a>
+        </span>
     </div>
 </footer>
 
