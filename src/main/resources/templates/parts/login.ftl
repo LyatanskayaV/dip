@@ -42,7 +42,9 @@
             </div>
         </#if>
         <div style="margin-left: -14px;">
+<#--
             <input type="hidden" name="_csrf" value="${_csrf.token}" />
+-->
             <#if !isRegisterForm>
                 <a style="margin-top: 30px; text-align:left; color: black;width: 180px; height: 40px; background-color: #faaeae; display: inline-block;
          font-size: 17px;border: 2px #D3D3D3 solid; padding-left: 7px; margin-right: 155px; padding-top: 6px" href="/registration">Новий користувач</a>
@@ -55,7 +57,9 @@
 
     <#macro logout>
         <form action="/logout" method="post">
+<#--
             <input type="hidden" name="_csrf" value="${_csrf.token}" />
+-->
             <button class="btn btn-primary" type="submit">Вийти</button>
         </form>
     </#macro>

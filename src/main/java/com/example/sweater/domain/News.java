@@ -17,6 +17,19 @@ public class News {
     @Column(name = "date_news")
     private String date_news;
 
+    @ManyToOne
+    @JoinColumn(name= "img_news")
+    private ImageC img_news;
+
+    public String getImg_news() {
+        return String.valueOf(img_news.getPath());
+    }
+
+    public void setImg_news(ImageC img_news) {
+        this.img_news = img_news;
+    }
+
+
     public Integer getId_news() {
         return id_news;
     }

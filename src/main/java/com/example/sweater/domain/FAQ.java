@@ -9,13 +9,24 @@ public class FAQ {
     @Column(name = "id_faq")
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id_faq;
-
-
-
     @Column(name = "answer_faq")
     private String answer_faq;
     @Column(name = "question_faq")
     private String question_faq;
+
+    @ManyToOne
+    @JoinColumn(name= "author_faq")
+    private User author_faq;
+
+    public String getAuthor_faq() {
+        return String.valueOf(author_faq.getUsername());
+    }
+
+    public void setAuthor_faq(User author_faq) {
+        this.author_faq = author_faq;
+    }
+
+
 
     public Integer getId_faq() {
         return id_faq;

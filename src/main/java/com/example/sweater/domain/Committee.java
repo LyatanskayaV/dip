@@ -15,13 +15,28 @@ public class Committee {
     @Column(name = "body")
     private String body;
 
+    @ManyToOne
+    @JoinColumn(name= "img_committee")
+    private ImageC img_committee;
+
+
+
     public Committee() {
     }
-
     public Committee(String title, String body) {
         this.title = title;
         this.body = body;
     }
+
+    public String getImg_committee() {
+        return String.valueOf(img_committee.getPath());
+    }
+
+    public void setImg_committee(ImageC img_committee) {
+        this.img_committee = img_committee;
+    }
+
+
 
     public void setTitle(String title) {
         this.title = title;

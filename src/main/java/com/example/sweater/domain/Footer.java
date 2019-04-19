@@ -13,29 +13,19 @@ import javax.persistence.*;
         private String title_footer;
         @Column(name = "body_footer")
         private String body_footer;
-        @Column(name = "img")
-        private String img;
 
-    public String getImg() {
-        return img;
+
+    @ManyToOne
+    @JoinColumn(name= "img_footer")
+    private ImageC img_footer;
+
+    public String getImg_footer() {
+        return String.valueOf(img_footer.getPath());
     }
 
-    public void setImg(String img) {
-        this.img = img;
+    public void setImg_footer(ImageC img_footer) {
+        this.img_footer = img_footer;
     }
-        /*        @OnetoMany(targetEntity = Image1.class)
-        @JoinColumn(name = "id_image")
-        private String id_image;
-
-
-
-    public String getId_image() {
-        return id_image;
-    }
-
-    public void setId_image(String id_image) {
-        this.id_image = id_image;
-    }*/
 
     public Integer getId() {
         return id;

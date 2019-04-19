@@ -43,20 +43,26 @@
 
 <div>
     <img class="home_imgs" src="/static/13871.jpg">
-    <p style="margin-top: -150px; margin-left: 40%">Приймальна комісія</p>
-    <p style="margin-top: 30px; margin-left: 40%; font-size: 14px; font-style: italic; width: 50%;">Тут міститься інформація про приймальну комісію, години роботи, адреса, необхідні документи, перелік предметів, тощо.
+    <a style="color: black;" href="/committee1">
+        <p style="margin-top: -150px; margin-left: 40%">Приймальна комісія</p>
+        <p style="margin-top: 30px; margin-left: 40%; font-size: 14px; font-style: italic; width: 50%;">Тут міститься інформація про приймальну комісію, години роботи, адреса, необхідні документи, перелік предметів, тощо.
+    </a>
     </p>
 </div>
 <div style="margin-top: 80px;">
     <img class="home_imgs" src="/static/homeQuestImg.jpg">
-    <p style="margin-top: -150px; margin-left: 40%">Інформація про квест</p>
-    <p style="margin-top: 30px; margin-left: 40%; font-size: 14px; font-style: italic; width: 50%;">Тут міститься інформація про квест, який розроблено студентами для полегшення процесу ознайомлення абітурієнта із навчальним закладом.
+    <a style="color: black;" href="/quest">
+        <p style="margin-top: -150px; margin-left: 40%">Інформація про квест</p>
+        <p style="margin-top: 30px; margin-left: 40%; font-size: 14px; font-style: italic; width: 50%;">Тут міститься інформація про квест, який розроблено студентами для полегшення процесу ознайомлення абітурієнта із навчальним закладом.
+    </a>
     </p>
 </div>
 <div style="margin-top: 80px; margin-bottom: 100px;">
     <img class="home_imgs" src="/static/contactsImg.jpg" >
-    <p style="margin-top: -150px; margin-left: 40%">Контактна інформація</p>
-    <p style="margin-top: 30px; margin-left: 40%; font-size: 14px; font-style: italic; width: 50%;">Тут міститься інформація про те, як зв'язатися із представниками приймальної комісії, адреса, часи роботи, тощо.
+    <a style="color: black;" href="/contacts">
+        <p style="margin-top: -150px; margin-left: 40%">Контактна інформація</p>
+        <p style="margin-top: 30px; margin-left: 40%; font-size: 14px; font-style: italic; width: 50%;">Тут міститься інформація про те, як зв'язатися із представниками приймальної комісії, адреса, часи роботи, тощо.
+    </a>
     </p>
 </div>
 
@@ -64,7 +70,7 @@
 <footer>
     <div style="padding-top: 10px;margin-bottom: 0; text-align: center;">
         <table style="width: 100%;">
-            <tr th:each="footer : ${footers}">
+            <tr th:each="footer : ${footers_home}">
                 <td th:text="${footer.title_footer}"></td>
                 <td th:text="${footer.body_footer}"></td>
             </tr>
@@ -75,19 +81,19 @@
         <div style="width: 20%;
     margin-left: 65%;
     margin-bottom: 20px;">
-            <span><a href="https://www.facebook.com/onaft"><img style="height: 35px;" th:attr="src=${img1}" height="30"></a>
+            <span><a href="https://www.facebook.com/onaft"><img style="height: 35px;" th:attr="src=${img_home1}" height="30"></a>
         </span>
-            <span><a href="https://www.instagram.com/_onaft_/"><img style="height: 47px;" th:attr="src=${img2}" height="30"></a>
+            <span><a href="https://www.instagram.com/_onaft_/"><img style="height: 47px;" th:attr="src=${img_home2}" height="30"></a>
         </span>
         </div>
     </div>
 
     <div style="width: 100%; height: 70px">
-        <span><a href="https://www.onaft.edu.ua/"><img style="height: 50px;" th:attr="src=${img3}" height="30"></a>
+        <span><a href="https://www.onaft.edu.ua/"><img style="height: 50px;" th:attr="src=${img_home3}" height="30"></a>
         </span>
-        <span><a href="https://mon.gov.ua/ua"><img style="height: 50px;" th:attr="src=${img4}" height="30"></a>
+        <span><a href="https://mon.gov.ua/ua"><img style="height: 50px;" th:attr="src=${img_home4}" height="30"></a>
         </span>
-        <span><a href="http://www.kipik.onaft.edu.ua/index.php/ua/"><img style="height: 50px;" th:attr="src=${img5}" height="30"></a>
+        <span><a href="http://www.kipik.onaft.edu.ua/index.php/ua/"><img style="height: 50px;" th:attr="src=${img_home5}" height="30"></a>
         </span>
     </div>
 </footer>

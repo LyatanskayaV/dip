@@ -16,6 +16,19 @@ public class Quest {
     @Column(name = "link_quest")
     private String link_quest;
 
+    @ManyToOne
+    @JoinColumn(name= "img_quest")
+    private ImageC img_quest;
+
+    public String getImg_quest() {
+        return String.valueOf(img_quest.getPath());
+    }
+
+    public void setImg_quest(ImageC img_quest) {
+        this.img_quest = img_quest;
+    }
+
+
     public String getLink_quest() {
         return link_quest;
     }

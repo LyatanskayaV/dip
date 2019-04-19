@@ -4,7 +4,7 @@ package com.example.sweater.domain;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "imageС", schema = "public", catalog = "")
+@Table(name = "imageС", schema = "public")
 public class ImageC {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
