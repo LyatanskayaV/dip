@@ -8,16 +8,16 @@ import javax.persistence.*;
 public class ImageC {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
-    private Integer id_image;
+    private int id_image;
 
     @Column(name = "path")
     private String path;
 
-    public Integer getId_image() {
+    public int getId_image() {
         return id_image;
     }
 
-    public void setId_image(Integer id_image) {
+    public void setId_image(int id_image) {
         this.id_image = id_image;
     }
 

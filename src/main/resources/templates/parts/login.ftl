@@ -9,11 +9,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
 </head>
 <body class="login">
 
 <img class="login1" src="../static/loginImg.jpg">
-<div style="margin-left: 33%;
+<div style="border: 1px outset #6ca7f4;
+    border-radius: 5%;margin-left: 33%;
     width: 35%;
     height: 35%;
     margin-top: 17%;
@@ -40,19 +43,25 @@
                     <input type="email" name="email" class="form-control" placeholder="some@some.com" />
                 </div>
             </div>
+            <div style="margin-bottom: 10px;
+    position: absolute;
+    margin-left: 150px">
+                <div class="g-recaptcha" data-sitekey="6LfZlp8UAAAAAFcai3vX5K3QPHplKs0T2iVqR3BN"></div>
+            </div>
         </#if>
         <div style="margin-left: -14px;">
 <#--
             <input type="hidden" name="_csrf" value="${_csrf.token}" />
 -->
             <#if !isRegisterForm>
-                <a style="margin-top: 30px; text-align:left; color: black;width: 180px; height: 40px; background-color: #faaeae; display: inline-block;
+                <a style="margin-top: 0px; text-align:left; color: black;width: 180px; height: 40px; background-color: #7EC2FA; display: inline-block;
          font-size: 17px;border: 2px #D3D3D3 solid; padding-left: 7px; margin-right: 155px; padding-top: 6px" href="/registration">Новий користувач</a>
             </#if>
-            <button style="background-color: #faaeae; width: 120px; height: 40px;" type="submit">
+            <button style="background-color: #7EC2FA; width: 120px; height: 40px; position: fixed;" type="submit">
                 <#if isRegisterForm>Створити<#else>Вхід</#if></button>
+
         </div>
-    </form>
+           </form>
     </#macro>
 
     <#macro logout>

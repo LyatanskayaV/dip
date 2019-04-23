@@ -8,7 +8,7 @@ import java.text.DateFormat;
 public class News {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
-    private Integer id_news;
+    private Long id_news;
 
     @Column(name = "title_news")
     private String title_news;
@@ -30,11 +30,11 @@ public class News {
     }
 
 
-    public Integer getId_news() {
+    public Long getId_news() {
         return id_news;
     }
 
-    public void setId_news(Integer id_news) {
+    public void setId_news(Long id_news) {
         this.id_news = id_news;
     }
 

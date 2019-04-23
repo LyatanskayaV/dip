@@ -1,7 +1,9 @@
 package com.example.sweater.controller;
 
+import com.example.sweater.domain.FAQ;
 import com.example.sweater.domain.Role;
 import com.example.sweater.domain.User;
+import com.example.sweater.repos.FaqRepo;
 import com.example.sweater.repos.UserRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -15,11 +17,13 @@ import java.util.Set;
 import java.util.stream.Collectors;
 
 @Controller
-@RequestMapping("/user")
+@RequestMapping("/userAdmin")
 @PreAuthorize("hasAuthority('ADMIN')")
 public class UserController {
     @Autowired
     private UserRepo userRepo;
+
+
 
     @GetMapping
     public String userList(Model model) {
@@ -43,11 +47,9 @@ public class UserController {
             @RequestParam("userId") User user
     ) {
         user.setUsername(username);
-
         Set<String> roles = Arrays.stream(Role.values())
                 .map(Role::name)
                 .collect(Collectors.toSet());
-
         user.getRoles().clear();
 
         for (String key : form.keySet()) {
@@ -55,9 +57,7 @@ public class UserController {
                 user.getRoles().add(Role.valueOf(key));
             }
         }
-
         userRepo.save(user);
-
         return "redirect:/user";
     }
 }

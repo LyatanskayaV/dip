@@ -7,7 +7,7 @@ import javax.persistence.*;
 public class Quest {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer id_quest;
+    private Long id_quest;
 
     @Column(name = "title_quest")
     private String title_quest;
@@ -37,11 +37,11 @@ public class Quest {
         this.link_quest = link_quest;
     }
 
-    public Integer getId_quest() {
+    public Long getId_quest() {
         return id_quest;
     }
 
-    public void setId_quest(Integer id_quest) {
+    public void setId_quest(Long id_quest) {
         this.id_quest = id_quest;
     }
 

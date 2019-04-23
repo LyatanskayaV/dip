@@ -2,7 +2,9 @@ package com.example.sweater.controller;
 
 import com.example.sweater.domain.*;
 import com.example.sweater.repos.*;
+import com.sun.org.apache.xpath.internal.operations.Mod;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -282,49 +284,33 @@ public class MainController {
     }
     @GetMapping("/new_feedback")
     public String feeds(Model model){
-
-        List<Feedback> feedbackList = (List<Feedback>) feedbackRepo.findAll();
-        model.addAttribute("feedbackList", feedbackList);
-
         return "new_feedback";
     }
 
 
-    @PostMapping("/new_feedback") // Map ONLY GET Requests
+    @PostMapping("/new_feedback")
     public String addNewFeedback (@RequestParam String title_feedback,
                                   @RequestParam String body_feedback,
-                                   User user) {
+                                   @AuthenticationPrincipal User user,
+                                  Model model) {
 
         String date = LocalDate.now().toString();
 
+        User username = userRepo.findByUsername(user.getUsername());
 
-
-        Feedback feedback = new Feedback();
-
-        feedback.setAuthor_feedback(user); /////////////////pizdets
-        feedback.setTitle_feedback(title_feedback);
-        feedback.setBody_feedback(body_feedback);
-        feedback.setDate_feedback(date);
-
+        Feedback feedback = new Feedback(  body_feedback, date, title_feedback, username);
         feedbackRepo.save(feedback);
 
-        return "/new_feedback";
+        return "redirect:/quest";
     }
 
 
 
-/*
-    @PostMapping("/new_feedback")
-    public String newFeeds(@RequestParam String title_feedback,
-                             @RequestParam String body_feedback,
-                                     Map<String, Object> model){
 
-        Feedback feedback = new Feedback(title_feedback, body_feedback);
-        feedbackRepo.save(feedback);
 
-        List<Feedback> feedbacks =  (List<Feedback>) feedbackRepo.findAll();
-        model.put("feedbacks",  feedbacks);
 
-        return "new_feedback";
-    }*/
+
+
+
+
 }

@@ -1,18 +1,15 @@
 package com.example.sweater.domain;
 
 import javax.persistence.*;
+import java.util.Optional;
 
 @Entity
 @Table(name = "feedback", schema = "public")
 public class Feedback {
     @Id
-    @Column(name = "id_feedback")
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer id_feedback;
-
-    /*@ElementCollection(targetClass = User.class, fetch = FetchType.EAGER)
-    @CollectionTable(name = "usr", joinColumns = @JoinColumn(name = "id"))
-    private Collection<User> author_feedback;*/
+  //  @Column(name = "id_feedback")
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    private Long id_feedback;
 
     @ManyToOne(cascade = CascadeType.ALL, targetEntity = User.class)
     @JoinColumn(name="author_feedback")
@@ -30,14 +27,21 @@ public class Feedback {
 
     }
 
-    public Feedback(User author_feedback, String title_feedback, String body_feedback, String date_feedback) {
-        this.author_feedback = author_feedback;
-        this.title_feedback = title_feedback;
+    public Feedback(
+            //Long id_feedback,
+            String body_feedback, String date_feedback, String title_feedback, User author_feedback) {
+       // this.id_feedback = id_feedback;
         this.body_feedback = body_feedback;
         this.date_feedback = date_feedback;
+        this.title_feedback = title_feedback;
+        this.author_feedback = author_feedback;
     }
 
-    public Integer getId_feedback() {
+    public String getAuthorName(){
+        return author_feedback!=null ? author_feedback.getUsername() : "<none>";
+    }
+
+    public Long getId_feedback() {
         return id_feedback;
     }
 
@@ -49,7 +53,7 @@ public class Feedback {
         this.author_feedback =  author_feedback;
     }
 
-    public void setId_feedback(Integer id_feedback) {
+    public void setId_feedback(Long id_feedback) {
         this.id_feedback = id_feedback;
     }
 

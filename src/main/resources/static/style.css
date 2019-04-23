@@ -9,7 +9,7 @@ body {
     min-height: 100%;
 }
 .navbar{
-    background-color: #fdc055e0;
+    background-color: #7ec2fab5;
     height: 40px;
     text-align: center;
     color: white; /* вертикальные линии*/
@@ -26,7 +26,7 @@ body {
 .sign_out{
     height: 100%;
     margin-bottom: 13%;
-    background-color: #ebb04b;
+    background-color: rgba(126, 194, 250, 0.81);
     border: none;
     text-decoration: underline white;
     color: white;
@@ -139,7 +139,19 @@ footer{
 
 .login_content{
     width: 100%;
-    margin-left: 10%;
-    padding-top: 5%;
+    margin-left: 30px;
+    padding-top: 10px;
     position: relative;
+}
+
+.scrollup{
+    width:40px;
+    height:40px;
+    opacity:0.3;
+    position:fixed;
+    bottom:50px;
+    right:100px;
+    display:none;
+    text-indent:-9999px;
+    background: url('icon_top.png') no-repeat;
 }

@@ -7,9 +7,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+
+            $(window).scroll(function(){
+                if ($(this).scrollTop() > 100) {
+                    $('.scrollup').fadeIn();
+                } else {
+                    $('.scrollup').fadeOut();
+                }
+            });
+
+            $('.scrollup').click(function(){
+                $("html, body").animate({ scrollTop: 0 }, 600);
+                return false;
+            });
+
+        });
+    </script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
 </head>
 <body>
+
+
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/ru_RU/sdk.js#xfbml=1&version=v3.2"></script>
+
+
+
 <nav class="navbar">
     <a class="a_navbar" href="/home">ГОЛОВНА</a><p>|</p><a class="a_navbar" href="/committee1">ПРИЙМАЛЬНА КОМІСІЯ</a><p>|</p>
     <a class="a_navbar" href="/quest">КВЕСТ</a><p>|</p><a class="a_navbar" href="/contacts">КОНТАКТИ</a>
@@ -44,6 +71,10 @@
 
 
 
+<a href="#" class="scrollup">Наверх</a>
+
+
+
 <footer>
     <div style="padding-top: 10px;margin-bottom: 0; text-align: center;">
         <table style="width: 100%;">
@@ -57,11 +88,18 @@
         </div>-->
         <div style="width: 20%;
     margin-left: 65%;
-    margin-bottom: 20px;">
-            <span><a href="https://www.facebook.com/onaft"><img style="height: 35px;" th:attr="src=${img_faq1}" height="30"></a>
+    margin-bottom: 20px;"><p>Ми у соціальних мережах:</p>
+            <span><a href="https://www.facebook.com/onaft"><img style="height: 35px;" th:attr="src=${img_faq1}"></a>
         </span>
-            <span><a href="https://www.instagram.com/_onaft_/"><img style="height: 47px;" th:attr="src=${img_faq2}" height="30"></a>
+            <span><a href="https://www.instagram.com/_onaft_/"><img style="height: 30px;" th:attr="src=${img_faq2}"></a>
         </span>
+        </div>
+        <div style="width: 20%;
+    margin-left: 16.3%;
+    margin-bottom: 10px;"><p>Поділитися сайтом:</p><div style="margin-bottom: 10px" class="fb-share-button" data-href="http://localhost:8080/" data-layout="button" data-size="large"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A8080%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Поділитися</a></div>
+            <div><a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-size="large" data-show-count="false">Tweet</a>
+                <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+            </div>
         </div>
     </div>
 

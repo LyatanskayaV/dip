@@ -38,8 +38,6 @@ public class UserSevice implements UserDetailsService {
         user.setActive(true);
         user.setRoles(Collections.singleton(Role.USER));
         user.setPassword(passwordEncoder.encode(user.getPassword()));
-
-
         userRepo.save(user);
         return true;
     }

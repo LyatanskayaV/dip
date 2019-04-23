@@ -8,7 +8,7 @@ public class FAQ {
     @Id
     @Column(name = "id_faq")
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer id_faq;
+    private Long id_faq;
     @Column(name = "answer_faq")
     private String answer_faq;
     @Column(name = "question_faq")
@@ -28,11 +28,11 @@ public class FAQ {
 
 
 
-    public Integer getId_faq() {
+    public Long getId_faq() {
         return id_faq;
     }
 
-    public void setId_faq(Integer id_faq) {
+    public void setId_faq(Long id_faq) {
         this.id_faq = id_faq;
     }
 
