@@ -20,6 +20,18 @@ public class News {
     @ManyToOne
     @JoinColumn(name= "img_news")
     private ImageC img_news;
+    public News(){
+
+    }
+
+    public News(String title_news, String body_news, String date_news, ImageC img_news) {
+        this.title_news = title_news;
+        this.body_news = body_news;
+        this.date_news = date_news;
+        this.img_news = img_news;
+    }
+
+
 
     public String getImg_news() {
         return String.valueOf(img_news.getPath());

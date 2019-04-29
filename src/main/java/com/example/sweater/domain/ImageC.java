@@ -13,6 +13,13 @@ public class ImageC {
     @Column(name = "path")
     private String path;
 
+    public ImageC(){
+    }
+
+    public ImageC(String path) {
+        this.path = path;
+    }
+
     public int getId_image() {
         return id_image;
     }

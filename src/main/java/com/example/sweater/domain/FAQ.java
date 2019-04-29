@@ -6,27 +6,27 @@ import javax.persistence.*;
 @Table(name = "faq", schema = "public")
 public class FAQ {
     @Id
-    @Column(name = "id_faq")
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id_faq;
     @Column(name = "answer_faq")
     private String answer_faq;
     @Column(name = "question_faq")
     private String question_faq;
 
-    @ManyToOne
-    @JoinColumn(name= "author_faq")
+    @ManyToOne(cascade = CascadeType.ALL, targetEntity = User.class)
+    @JoinColumn(name="author_faq")
     private User author_faq;
 
-    public String getAuthor_faq() {
-        return String.valueOf(author_faq.getUsername());
+
+    public FAQ(){
     }
 
-    public void setAuthor_faq(User author_faq) {
+
+    public FAQ(String answer_faq, String question_faq, User author_faq) {
+        this.answer_faq = answer_faq;
+        this.question_faq = question_faq;
         this.author_faq = author_faq;
     }
-
-
 
     public Long getId_faq() {
         return id_faq;
@@ -50,5 +50,13 @@ public class FAQ {
 
     public void setQuestion_faq(String question_faq) {
         this.question_faq = question_faq;
+    }
+
+    public String getAuthor_faq() {
+        return author_faq.getUsername();
+    }
+
+    public void setAuthor_faq(User author_faq) {
+        this.author_faq =  author_faq;
     }
 }

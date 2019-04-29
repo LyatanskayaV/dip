@@ -8,6 +8,9 @@ public interface ImageRepo extends CrudRepository<ImageC, Long> {
     @Override
     Iterable<ImageC> findAll();
 
+    ImageC findByPath(String path);
+
+
 /*
     Iterable<ImageC> findById(int id);
 */

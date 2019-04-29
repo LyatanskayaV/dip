@@ -287,6 +287,49 @@ public class MainController {
         return "new_feedback";
     }
 
+    @GetMapping("/new_faq")
+    public String new_news(Model model){
+        return "new_faq";
+    }
+
+    @PostMapping("/new_faq")
+    public String addNewFaq (@RequestParam String answer_faq,
+                                  @RequestParam String question_faq,
+                                  @AuthenticationPrincipal User user,
+                                  Model model) {
+
+        User username = userRepo.findByUsername(user.getUsername());
+
+        FAQ faq = new FAQ(answer_faq, question_faq, username);
+        faqRepo.save(faq);
+
+        return "redirect:/faqAdmin";
+    }
+
+
+    @GetMapping("/new_new")
+    public String new_new(Model model){
+        return "new_new";
+    }
+
+    @PostMapping("/new_new")
+    public String addNewNew (@RequestParam String title_news,
+                             @RequestParam String body_news,
+                             @RequestParam("img_news") String img_news,
+                             Model model) {
+
+
+        String date = LocalDate.now().toString();
+
+        ImageC imageC = new ImageC(img_news);
+        imageRepo.save(imageC);
+
+        News news = new News(title_news,body_news,date, imageC);
+
+        newsRepo.save(news);
+
+        return "redirect:/newsAdmin";
+    }
 
     @PostMapping("/new_feedback")
     public String addNewFeedback (@RequestParam String title_feedback,
@@ -303,14 +346,14 @@ public class MainController {
 
         return "redirect:/quest";
     }
+/*
+    @PostMapping("/delete_faq")
+    public String deleteFaq (@RequestParam Integer id_faq) {
 
+        Iterable<FAQ> faq = faqRepo.findById_faq(id_faq);
+        faqRepo.delete((FAQ) faq);
 
-
-
-
-
-
-
-
+        return "redirect:/faqAdmin";
+    }*/
 
 }
