@@ -30,6 +30,7 @@ public class MvcConfig implements WebMvcConfigurer {
         registry.addViewController("/faq").setViewName("faq");
         registry.addViewController("/new_feedback").setViewName("new_feedback");
         registry.addViewController("/admin").setViewName("admin");
+        registry.addViewController("/faqAdmin").setViewName("faqAdmin");
     }
 
     @Override

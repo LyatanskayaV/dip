@@ -40,8 +40,8 @@
     </form>
 
 
-    <form action="/faqAdmin/"  method="delete">
-        <input id="id_faq" name="id_faq" type="hidden" value="${faq.id_faq}"/>
+    <form action="/faqAdmin/Delete/${faq.id_faq}"  method="delete">
+        <input id="id_faq"  type="hidden" value="${faq.id_faq}"/>
         <input type="submit"  value="delete" onClick="return confirm('sure?')"/>
     </form>
 

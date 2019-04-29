@@ -30,10 +30,10 @@ import java.util.Optional;
             return "faqEdit";
         }
 
-    @DeleteMapping("{faq}")
-    public ResponseEntity deleteFaq(@PathVariable Long faq) {
+    @RequestMapping(value ="/Delete/{faq}", method = {RequestMethod.DELETE,RequestMethod.GET})
+    public String deleteFaq(@PathVariable Long faq) {
         faqRepo.deleteById(faq);
-        return ResponseEntity.noContent().build();
+        return "redirect:/faqAdmin";
     }
 
     @PostMapping
@@ -46,7 +46,7 @@ import java.util.Optional;
             faq.setAnswer_faq(answer_faq);
 
             faqRepo.save(faq);
-            return "redirect:/faqAdmin";
+            return "redirect:/";
         }
 
 

@@ -13,7 +13,7 @@ public class FAQ {
     @Column(name = "question_faq")
     private String question_faq;
 
-    @ManyToOne(cascade = CascadeType.ALL, targetEntity = User.class)
+    @ManyToOne(targetEntity = User.class)
     @JoinColumn(name="author_faq")
     private User author_faq;
 
