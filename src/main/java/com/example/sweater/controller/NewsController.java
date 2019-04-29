@@ -27,6 +27,15 @@ public class NewsController {
         model.addAttribute("news", news);
         return "newsEdit";
     }
+
+
+    @RequestMapping(value ="/Delete/{news}", method = {RequestMethod.DELETE,RequestMethod.GET})
+    public String deleteNews(@PathVariable Long news) {
+        newsRepo.deleteById(news);
+        return "redirect:/newsAdmin";
+    }
+
+
     @PostMapping
     public String newsSave(
             @RequestParam String title_news,

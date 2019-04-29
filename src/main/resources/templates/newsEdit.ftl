@@ -39,6 +39,14 @@
         <input type="hidden" value="${news.id_news}" name="id_news">
         <button style="margin-left: 10px" type="submit">Save</button>
     </form>
+
+
+    <form action="/newsAdmin/Delete/${news.id_news}"  method="delete">
+        <input id="id_news"  type="hidden" value="${news.id_news}"/>
+        <input type="submit"  value="delete" onClick="return confirm('sure?')"/>
+    </form>
+
+
 </div>
 </body>
 </html>
