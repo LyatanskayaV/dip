@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+    <channel>
+        <title>Baeldung RSS Feed</title>
+        <link>http://www.baeldung.com</link>
+        <description>Learn how to program in Java</description>
+        <item>
+            <title>JUnit 5 @Test Annotation</title>
+            <link>http://www.baeldung.com/junit-5-test-annotation</link>
+            <pubDate>Tue, 19 Dec 2017 00:00:00 GMT</pubDate>
+            <author>donatohan.rimenti@gmail.com</author>
+        </item>
+    </channel>
+</rss>
